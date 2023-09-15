@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.6 on win32)" generated="20230915 11:49:59.967" rpa="false" schemaversion="3">
+<suite id="s1" name="Apptest" source="D:\Python project\QA_Automation_Vaibhav\tests\apptest.robot">
+<kw name="Begin web test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230915 11:50:00.127" level="INFO">Opening browser 'Chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230915 11:50:00.127" endtime="20230915 11:50:01.128"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230915 11:50:01.128" level="INFO">Opening url 'https://automationinterface1.front.staging.optimy.net/en/'</msg>
+<status status="PASS" starttime="20230915 11:50:01.128" endtime="20230915 11:50:02.652"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230915 11:50:02.652" endtime="20230915 11:50:02.770"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>css:#cookie-allow-all-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:02.770" level="INFO">Clicking button 'css:#cookie-allow-all-button'.</msg>
+<status status="PASS" starttime="20230915 11:50:02.770" endtime="20230915 11:50:02.821"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:00.127" endtime="20230915 11:50:02.821"/>
+</kw>
+<test id="s1-t1" name="Click login button and provide credentials" line="16">
+<kw name="Given landing page is opened" library="App">
+<kw name="verify that page is loaded" library="LandingPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:a[href='project/new/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230915 11:50:02.822" endtime="20230915 11:50:02.832"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:02.822" endtime="20230915 11:50:02.832"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:02.822" endtime="20230915 11:50:02.832"/>
+</kw>
+<kw name="And user click on login button" library="App">
+<kw name="click login button" library="LandingPage">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:02.832" level="INFO">Clicking link 'Login'.</msg>
+<status status="PASS" starttime="20230915 11:50:02.832" endtime="20230915 11:50:04.248"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:02.832" endtime="20230915 11:50:04.248"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:02.832" endtime="20230915 11:50:04.248"/>
+</kw>
+<kw name="When user provides its credentials" library="App">
+<arg>${Credentials}</arg>
+<kw name="input &quot;user name&quot;" library="LandingPage">
+<arg>${User_Creds.Email}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#login-email</arg>
+<arg>${useremail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:04.248" level="INFO">Typing text 'optimyautomationtester@gmail.com' into text field 'css:#login-email'.</msg>
+<status status="PASS" starttime="20230915 11:50:04.248" endtime="20230915 11:50:04.327"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:04.248" endtime="20230915 11:50:04.327"/>
+</kw>
+<kw name="input &quot;user password&quot;" library="LandingPage">
+<arg>${User_Creds.Password}</arg>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>css:#login-password</arg>
+<arg>${userpassword}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:04.327" level="INFO">Typing password into text field 'css:#login-password'.</msg>
+<msg timestamp="20230915 11:50:04.348" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230915 11:50:04.380" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230915 11:50:04.327" endtime="20230915 11:50:04.380"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:04.327" endtime="20230915 11:50:04.380"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:04.248" endtime="20230915 11:50:04.380"/>
+</kw>
+<kw name="Then user is succesfully logged in" library="App">
+<kw name="click on login button" library="LandingPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>Login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:04.380" level="INFO">Clicking button 'Login'.</msg>
+<status status="PASS" starttime="20230915 11:50:04.380" endtime="20230915 11:50:05.445"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:04.380" endtime="20230915 11:50:05.445"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:04.380" endtime="20230915 11:50:05.445"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:02.822" endtime="20230915 11:50:05.445"/>
+</test>
+<test id="s1-t2" name="click on submit a new application" line="23">
+<kw name="Given Home page is opened" library="App">
+<kw name="Verify that home page is opened" library="HomePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:a[href='project/new/']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230915 11:50:05.447" endtime="20230915 11:50:05.459"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:05.447" endtime="20230915 11:50:05.460"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:05.446" endtime="20230915 11:50:05.460"/>
+</kw>
+<kw name="When user clicks on &quot;submit new application&quot; button" library="App">
+<kw name="click &quot;Submit new button&quot;" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a[href='project/new/']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:05.461" level="INFO">Clicking element 'css:a[href='project/new/']'.</msg>
+<status status="PASS" starttime="20230915 11:50:05.461" endtime="20230915 11:50:07.431"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:05.460" endtime="20230915 11:50:07.431"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:05.460" endtime="20230915 11:50:07.431"/>
+</kw>
+<kw name="And user is navigated to second home page" library="App">
+<kw name="verify that second home page is loaded" library="HomePage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Continue with the submission of an application?</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230915 11:50:07.442" level="INFO">Current page contains text 'Continue with the submission of an application?'.</msg>
+<status status="PASS" starttime="20230915 11:50:07.432" endtime="20230915 11:50:07.442"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:07.432" endtime="20230915 11:50:07.442"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:07.432" endtime="20230915 11:50:07.442"/>
+</kw>
+<kw name="Then user user clicks on &quot;submit new application&quot; button at the bottom" library="App">
+<kw name="click on &quot;submit new application&quot; button at the bottom" library="HomePage">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css:a[class='btn btn-outline-primary']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:07.443" level="INFO">Clicking element 'css:a[class='btn btn-outline-primary']'.</msg>
+<status status="PASS" starttime="20230915 11:50:07.443" endtime="20230915 11:50:09.767"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:07.443" endtime="20230915 11:50:09.767"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:07.443" endtime="20230915 11:50:09.767"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:05.446" endtime="20230915 11:50:09.767"/>
+</test>
+<test id="s1-t3" name="Provide all the details in the form" line="29">
+<kw name="Given Form page is loaded" library="App">
+<kw name="&quot;Form&quot; page is opened" library="FormPage">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Entrance exam</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230915 11:50:09.768" level="INFO">Current page contains text 'Entrance exam'.</msg>
+<status status="PASS" starttime="20230915 11:50:09.768" endtime="20230915 11:50:09.780"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:09.768" endtime="20230915 11:50:09.780"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:09.768" endtime="20230915 11:50:09.780"/>
+</kw>
+<kw name="When user enters all the details" library="App">
+<arg>${User_Data}</arg>
+<kw name="Enter user details" library="FormPage">
+<arg>${customerdata}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[id='629d7b5a-f6a1-5a14-ac1d-21b2fafdbdef']</arg>
+<arg>${customerdata.FirstName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:09.781" level="INFO">Typing text 'Vai' into text field 'css:input[id='629d7b5a-f6a1-5a14-ac1d-21b2fafdbdef']'.</msg>
+<status status="PASS" starttime="20230915 11:50:09.780" endtime="20230915 11:50:09.825"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:input[id='23e5e47e-bab1-5a1e-9929-f180182bda43']</arg>
+<arg>${customerdata.LastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:09.825" level="INFO">Typing text 'Sha' into text field 'css:input[id='23e5e47e-bab1-5a1e-9929-f180182bda43']'.</msg>
+<status status="PASS" starttime="20230915 11:50:09.825" endtime="20230915 11:50:09.901"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:textarea[id='7172c3f2-f508-5f9c-82a1-11ce9d0f3edc::c3f44a2e-72e9-587b-b88c-b5c9fbeed2db']</arg>
+<arg>${customerdata.Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:09.901" level="INFO">Typing text 'Bengaluru' into text field 'css:textarea[id='7172c3f2-f508-5f9c-82a1-11ce9d0f3edc::c3f44a2e-72e9-587b-b88c-b5c9fbeed2db']'.</msg>
+<status status="PASS" starttime="20230915 11:50:09.901" endtime="20230915 11:50:09.956"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:#container_e57df0b5-c2ad-514a-967f-ee8b962f5ed4 div input</arg>
+<arg>${customerdata.Postal}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:09.956" level="INFO">Typing text '1000' into text field 'css:#container_e57df0b5-c2ad-514a-967f-ee8b962f5ed4 div input'.</msg>
+<status status="PASS" starttime="20230915 11:50:09.956" endtime="20230915 11:50:10.010"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>05s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230915 11:50:15.027" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230915 11:50:10.020" endtime="20230915 11:50:15.027"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{elements}</var>
+<arg>css:#ui-id-1</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20230915 11:50:15.043" level="INFO">@{elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_139")&gt; ]</msg>
+<status status="PASS" starttime="20230915 11:50:15.027" endtime="20230915 11:50:15.043"/>
+</kw>
+<for flavor="IN">
+<var>${element}</var>
+<value>${elements}</value>
+<iter>
+<var name="${element}">[&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_139")&gt;]</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:15.059" level="INFO">${text} = 1000 - Bruxelles / Brussel</msg>
+<status status="PASS" starttime="20230915 11:50:15.043" endtime="20230915 11:50:15.059"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>"${text}" == "1000 - Bruxelles / Brussel"</arg>
+<arg>click element</arg>
+<arg>${element}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:15.059" level="INFO">Clicking element '[&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_139")&gt;]'.</msg>
+<status status="PASS" starttime="20230915 11:50:15.059" endtime="20230915 11:50:15.101"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:15.059" endtime="20230915 11:50:15.101"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:15.043" endtime="20230915 11:50:15.101"/>
+</iter>
+<status status="PASS" starttime="20230915 11:50:15.043" endtime="20230915 11:50:15.101"/>
+</for>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:select[id='7e595970-fc12-558c-9eaf-385735fcae6b']</arg>
+<arg>${customerdata.Country}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230915 11:50:15.102" level="INFO">Selecting options from selection list 'css:select[id='7e595970-fc12-558c-9eaf-385735fcae6b']' by value IN.</msg>
+<status status="PASS" starttime="20230915 11:50:15.101" endtime="20230915 11:50:15.158"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>css:input[type='file']</arg>
+<arg>D:\\Python project\\QA_Automation_Vaibhav\\image.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<msg timestamp="20230915 11:50:15.158" level="INFO">Sending D:\Python project\QA_Automation_Vaibhav\image.jpg to browser.</msg>
+<status status="PASS" starttime="20230915 11:50:15.158" endtime="20230915 11:50:15.182"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(500, 900)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:15.182" level="INFO">Executing JavaScript:
+window.scrollTo(500, 900)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230915 11:50:15.182" endtime="20230915 11:50:15.192"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>7s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230915 11:50:22.205" level="INFO">Slept 7 seconds</msg>
+<status status="PASS" starttime="20230915 11:50:15.192" endtime="20230915 11:50:22.205"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele}</var>
+<arg>css:#f3fa11a5-a516-5cec-9025-b940b1b113d0</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:22.221" level="INFO">${ele} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_168")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:22.205" endtime="20230915 11:50:22.221"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:22.221" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_168")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:22.221" endtime="20230915 11:50:22.244"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>css:#field_f801d7d8-0762-5407-95f9-b8c3a793157c</arg>
+<arg>6365118b-637a-5297-b56d-e7c8b9a60ce0</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20230915 11:50:22.244" level="INFO">Selecting options from selection list 'css:#field_f801d7d8-0762-5407-95f9-b8c3a793157c' by value 6365118b-637a-5297-b56d-e7c8b9a60ce0.</msg>
+<status status="PASS" starttime="20230915 11:50:22.244" endtime="20230915 11:50:22.279"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele1}</var>
+<arg>css:input[id='5ab6a927-7b72-5869-acc3-0db0858bc495']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:22.293" level="INFO">${ele1} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_176")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:22.279" endtime="20230915 11:50:22.293"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele1}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:22.293" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_176")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:22.293" endtime="20230915 11:50:22.304"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele2}</var>
+<arg>css:input[id='36c255b7-8d7c-50b9-8e75-b2ae9a57185b']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:22.307" level="INFO">${ele2} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_177")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:22.305" endtime="20230915 11:50:22.307"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele2}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:22.307" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_177")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:22.307" endtime="20230915 11:50:22.321"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele3}</var>
+<arg>css:input[id='92dcaa01-633c-5db1-ac87-e003906567ea']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:22.321" level="INFO">${ele3} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_178")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:22.321" endtime="20230915 11:50:22.321"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(500, 1100)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:22.321" level="INFO">Executing JavaScript:
+window.scrollTo(500, 1100)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230915 11:50:22.321" endtime="20230915 11:50:22.331"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230915 11:50:25.338" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230915 11:50:22.331" endtime="20230915 11:50:25.338"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele3}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:25.338" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_178")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:25.338" endtime="20230915 11:50:25.346"/>
+</kw>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele4}</var>
+<arg>css:input[id='773e5289-f4b3-5d6d-ac81-5c99e2b39acd']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:25.346" level="INFO">${ele4} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_181")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:25.346" endtime="20230915 11:50:25.346"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele4}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:25.346" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_181")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:25.346" endtime="20230915 11:50:25.346"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(500, 1900)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:25.359" level="INFO">Executing JavaScript:
+window.scrollTo(500, 1900)
+Without any arguments.</msg>
+<status status="PASS" starttime="20230915 11:50:25.346" endtime="20230915 11:50:25.359"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230915 11:50:28.361" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230915 11:50:25.359" endtime="20230915 11:50:28.361"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>css:#cke_1_contents iframe</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20230915 11:50:28.361" level="INFO">Selecting frame 'css:#cke_1_contents iframe'.</msg>
+<status status="PASS" starttime="20230915 11:50:28.361" endtime="20230915 11:50:28.392"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>css:body[role='textbox']</arg>
+<arg>if script works fine, hire me directly</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230915 11:50:28.392" level="INFO">Typing text 'if script works fine, hire me directly' into text field 'css:body[role='textbox']'.</msg>
+<status status="PASS" starttime="20230915 11:50:28.392" endtime="20230915 11:50:28.505"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20230915 11:50:28.505" endtime="20230915 11:50:28.507"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230915 11:50:31.519" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20230915 11:50:28.507" endtime="20230915 11:50:31.519"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:09.780" endtime="20230915 11:50:31.519"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:09.780" endtime="20230915 11:50:31.519"/>
+</kw>
+<kw name="Then user clicks on &quot;Next Screen&quot; button" library="App">
+<kw name="user nvaigate to next page using &quot;Next Screen&quot; button" library="FormPage">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${ele5}</var>
+<arg>css:button[id='navButtonNextMobile']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20230915 11:50:31.536" level="INFO">${ele5} = &lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_185")&gt;</msg>
+<status status="PASS" starttime="20230915 11:50:31.519" endtime="20230915 11:50:31.536"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>arguments[0].click();</arg>
+<arg>ARGUMENTS</arg>
+<arg>${ele5}</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230915 11:50:31.536" level="INFO">Executing JavaScript:
+arguments[0].click();
+By using argument:
+'&lt;selenium.webdriver.remote.webelement.WebElement (session="a7315aa6e9f92449e44b564307371691", element="C618BFED5AC9BD1F802313651DBCC61A_element_185")&gt;'</msg>
+<status status="PASS" starttime="20230915 11:50:31.536" endtime="20230915 11:50:31.551"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:31.519" endtime="20230915 11:50:31.551"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:31.519" endtime="20230915 11:50:31.551"/>
+</kw>
+<status status="PASS" starttime="20230915 11:50:09.768" endtime="20230915 11:50:31.551"/>
+</test>
+<doc>this test script will take the user information and verifies that user is added</doc>
+<status status="PASS" starttime="20230915 11:49:59.967" endtime="20230915 11:50:31.551"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Apptest">Apptest</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230915 11:49:59.967" level="ERROR">Error in file 'D:\Python project\QA_Automation_Vaibhav\tests\apptest.robot' on line 17: Setting 'Arguments' is not allowed with tests or tasks.</msg>
+<msg timestamp="20230915 11:49:59.967" level="ERROR">Error in file 'D:\Python project\QA_Automation_Vaibhav\tests\apptest.robot' on line 30: Setting 'Arguments' is not allowed with tests or tasks.</msg>
+<msg timestamp="20230915 11:50:00.127" level="ERROR">Error in file 'D:\Python project\QA_Automation_Vaibhav\Resources\Common.robot' on line 4: Setting 'Documentation' is allowed only once. Only the first value is used.</msg>
+</errors>
+</robot>
